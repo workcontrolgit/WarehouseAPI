@@ -9,6 +9,10 @@
     <PackageReference Include="EFCore.BulkExtensions" Version="8.0.0" />
     <PackageReference Include="LinqKit.Microsoft.EntityFrameworkCore" Version="8.1.5" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.0">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="8.0.0" />
     <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="8.0.0" />
@@ -18,6 +22,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Warehouse.Application\Warehouse.Application.csproj" />
     <ProjectReference Include="..\Warehouse.Domain\Warehouse.Domain.csproj" />
+    <ProjectReference Include="..\Warehouse.Infrastructure.Shared\Warehouse.Infrastructure.Shared.csproj" />
   </ItemGroup>
 
 </Project>

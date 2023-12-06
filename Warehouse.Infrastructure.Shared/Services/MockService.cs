@@ -20,7 +20,16 @@ namespace Warehouse.Infrastructure.Shared.Services
             return faker.Generate(rowCount);
         }
 
-
+        /// <summary>
+        /// Generates a list of cusotmer using the CustomerInsertBogusConfig class.
+        /// </summary>
+        /// <param name="rowCount">The number of customers to generate.</param>
+        /// <returns>A list of generated positions.</returns>
+        public List<Customer> GetCustomers(int rowCount)
+        {
+            var faker = new CustomerInsertBogusConfig();
+            return faker.Generate(rowCount);
+        }
 
         /// <summary>
         /// Gets a list of Employees using the EmployeeBogusConfig class.
