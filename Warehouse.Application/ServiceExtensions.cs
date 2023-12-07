@@ -19,6 +19,7 @@ namespace Warehouse.Application
             services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>));
             services.AddScoped<IDataShapeHelper<Position>, DataShapeHelper<Position>>();
             services.AddScoped<IDataShapeHelper<Employee>, DataShapeHelper<Employee>>();
+            services.AddScoped<IDataShapeHelper<Customer>, DataShapeHelper<Customer>>();
             services.AddScoped<IModelHelper, ModelHelper>();
         }
     }

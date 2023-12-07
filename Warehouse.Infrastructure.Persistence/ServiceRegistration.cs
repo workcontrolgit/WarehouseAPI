@@ -31,6 +31,7 @@ namespace Warehouse.Infrastructure.Persistence
             services.AddTransient(typeof(IGenericRepositoryAsync<>), typeof(GenericRepositoryAsync<>));
             services.AddTransient<IPositionRepositoryAsync, PositionRepositoryAsync>();
             services.AddTransient<IEmployeeRepositoryAsync, EmployeeRepositoryAsync>();
+            services.AddTransient<ICustomerRepositoryAsync, CustomerRepositoryAsync>();
 
             #endregion Repositories
         }
