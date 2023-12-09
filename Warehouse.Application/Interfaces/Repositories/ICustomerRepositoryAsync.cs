@@ -9,9 +9,9 @@ namespace Warehouse.Application.Interfaces.Repositories
     /// <summary>
     /// Repository interface for Customer entity with asynchronous methods.
     /// </summary>
-    /// <param name="positionNumber">Customer number to check for uniqueness.</param>
+    /// <param name="companyName">Customer number to check for uniqueness.</param>
     /// <returns>
-    /// Task indicating whether the position number is unique.
+    /// Task indicating whether the customer name is unique.
     /// </returns>
     /// <param name="rowCount">Number of rows to seed.</param>
     /// <returns>
@@ -25,7 +25,7 @@ namespace Warehouse.Application.Interfaces.Repositories
     /// </returns>    
     public interface ICustomerRepositoryAsync : IGenericRepositoryAsync<Customer>
     {
-        Task<bool> IsUniqueCustomerNumberAsync(string positionNumber);
+        Task<bool> IsUniqueCustomerNumberAsync(string companyName);
 
         Task<bool> SeedDataAsync(int rowCount);
 

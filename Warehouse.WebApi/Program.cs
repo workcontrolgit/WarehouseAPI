@@ -23,6 +23,9 @@ try
 
     Log.Information("Application startup services registration");
 
+    // Add configuration to the DI container
+    builder.Services.AddSingleton(builder.Configuration);
+
     builder.Services.AddApplicationLayer();
     builder.Services.AddPersistenceInfrastructure(builder.Configuration);
     builder.Services.AddSharedInfrastructure(builder.Configuration);
