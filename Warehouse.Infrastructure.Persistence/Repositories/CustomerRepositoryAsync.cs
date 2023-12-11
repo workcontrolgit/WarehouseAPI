@@ -90,7 +90,7 @@ namespace Warehouse.Infrastructure.Persistence.Repositories
                 result = result.OrderBy(orderBy);
             }
             //Including multiple levels
-            result = result.Include(customer => customer.Orders).ThenInclude(order => order.OrderItems);
+            result = result.Include(customer => customer.Orders).ThenInclude(order => order.OrderItems).ThenInclude(product => product.Product);
 
 
             // select columns
