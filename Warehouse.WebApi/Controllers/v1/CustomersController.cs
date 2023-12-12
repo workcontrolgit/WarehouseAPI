@@ -79,7 +79,7 @@ namespace Warehouse.WebApi.Controllers.v1
         /// <param name="query">The query parameters for the paged list.</param>
         /// <returns>A paged list of positions.</returns>
         [HttpPost]
-        [Authorize]
+        //[Authorize]
         [Route("Paged")]
         public async Task<IActionResult> Paged(PagedCustomersQuery query)
         {
@@ -93,7 +93,7 @@ namespace Warehouse.WebApi.Controllers.v1
         /// <param name="command">The command containing the updated information.</param>
         /// <returns>The updated position.</returns>
         [HttpPut("{id}")]
-        [Authorize(Policy = AuthorizationConsts.AdminPolicy)]
+        //[Authorize(Policy = AuthorizationConsts.AdminPolicy)]
         public async Task<IActionResult> Put(Guid id, UpdateCustomerCommand command)
         {
             if (id != command.Id)
@@ -109,7 +109,7 @@ namespace Warehouse.WebApi.Controllers.v1
         /// <param name="id">The Id of the position to delete.</param>
         /// <returns>The result of the deletion.</returns>
         [HttpDelete("{id}")]
-        [Authorize(Policy = AuthorizationConsts.AdminPolicy)]
+        //[Authorize(Policy = AuthorizationConsts.AdminPolicy)]
         public async Task<IActionResult> Delete(Guid id)
         {
             return Ok(await Mediator.Send(new DeleteCustomerByIdCommand { Id = id }));

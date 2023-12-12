@@ -90,7 +90,7 @@ namespace Warehouse.Infrastructure.Persistence.Repositories
                 result = result.OrderBy(orderBy);
             }
             //Including multiple levels
-            result = result.Include(customer => customer.Orders).ThenInclude(order => order.OrderItems);
+            result = result.Include(customer => customer.Orders).ThenInclude(order => order.OrderItems).ThenInclude(product => product.Product);
 
 
             // select columns
@@ -115,46 +115,6 @@ namespace Warehouse.Infrastructure.Persistence.Repositories
             return (shapeData, recordsCount);
 
         }
-
-        // ingest data into elastic search
-        //foreach (Customer customer in resultData)
-        //{
-        //    var getReponse = await _customerDocument.GetByIdAsync(customer.Id);
-
-        //    if (getReponse.IsValid)
-        //    {
-        //        if (getReponse.Source == null)
-        //        {
-        //            var insertResponse = await _customerDocument.AddAsync(customer);
-
-        //            if (!insertResponse.IsValid)
-        //            {
-        //                var errorMsg = "Problem inserting document to Elasticsearch.";
-        //                _logger.LogError(insertResponse.OriginalException, errorMsg);
-        //            }
-
-        //        }
-        //        else
-        //        {
-        //            var updateResponse = await _customerDocument.UpdateAsync(customer);
-
-        //            if (!updateResponse.IsValid)
-        //            {
-        //                var errorMsg = "Problem updating document in Elasticsearch.";
-        //                _logger.LogError(updateResponse.OriginalException, errorMsg);
-        //            }
-        //        }
-
-        //    }
-        //    else
-        //    {
-        //            var errorMsg = "Problem getting document from Elasticsearch.";
-        //            _logger.LogError(getReponse.OriginalException, errorMsg);
-
-        //    }
-        //}
-
-
 
         private void FilterByColumn(ref IQueryable<Customer> query, string companyName, string contactName)
         {

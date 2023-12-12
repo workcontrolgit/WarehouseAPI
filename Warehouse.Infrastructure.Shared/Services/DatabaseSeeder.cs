@@ -110,13 +110,9 @@ namespace Warehouse.Infrastructure.Shared.Services
         {
             var faker = new Faker<Product>()
                 .UseSeed(1969) // Use any number
-                .RuleFor(r => r.Id, f => Guid.NewGuid()) // Each product will have an incrementing id.
+                .RuleFor(r => r.Id, f => Guid.NewGuid()) // Each product will have a guid.
                 .RuleFor(r => r.Name, f => f.Commerce.ProductName())
-                // The refDate is very important! Without it, it will generate a random date based on the CURRENT date on your system.
-                // Generating a date based on the system date is not deterministic!
-                // So the solution is to pass in a constant date instead which will be used to generate a random date
-                .RuleFor(r => r.CreationDate, f => f.Date.FutureOffset(
-                    refDate: new DateTimeOffset(2023, 1, 16, 15, 15, 0, TimeSpan.FromHours(1))))
+                .RuleFor(r => r.CreationDate, f => f.Date.RecentOffset())
                 .RuleFor(r => r.Description, f => f.Commerce.ProductDescription())
                   .RuleFor(r => r.Created, f => f.Date.Recent())
                   .RuleFor(r => r.CreatedBy, f => f.Internet.UserName())
@@ -129,8 +125,8 @@ namespace Warehouse.Infrastructure.Shared.Services
         {
             var faker = new Faker<ProductCategory>()
                 .UseSeed(1969) // Use any number
-                .RuleFor(r => r.Id, f => Guid.NewGuid()) // Each category will have an incrementing id.
-                .RuleFor(r => r.Name, f => f.Commerce.Categories(1).First())
+                .RuleFor(r => r.Id, f => Guid.NewGuid()) // Each category will have a guid.
+                .RuleFor(r => r.Name, f => f.Commerce.Categories(1).FirstOrDefault())
                   .RuleFor(r => r.Created, f => f.Date.Recent())
                   .RuleFor(r => r.CreatedBy, f => f.Internet.UserName())
                 ;
