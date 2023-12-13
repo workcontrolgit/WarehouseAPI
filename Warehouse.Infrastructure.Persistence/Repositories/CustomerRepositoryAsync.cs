@@ -18,7 +18,7 @@ namespace Warehouse.Infrastructure.Persistence.Repositories
     public class CustomerRepositoryAsync : GenericRepositoryAsync<Customer>, ICustomerRepositoryAsync
     {
         private readonly ApplicationDbContext _dbContext;
-        private readonly DbSet<Customer> _customers;
+        private readonly DbSet<Customer> _repository;
         private IDataShapeHelper<Customer> _dataShaper;
         private readonly IMockService _mockData;
         private readonly ILogger<CustomerRepositoryAsync> _logger;
@@ -30,24 +30,20 @@ namespace Warehouse.Infrastructure.Persistence.Repositories
             ILogger<CustomerRepositoryAsync> logger) : base(dbContext)
         {
             _dbContext = dbContext;
-            _customers = dbContext.Set<Customer>();
+            _repository = dbContext.Set<Customer>();
             _dataShaper = dataShaper;
             _mockData = mockData;
         }
 
         public async Task<bool> IsUniqueCustomerNumberAsync(string companyName)
         {
-            return await _customers
+            return await _repository
                 .AllAsync(p => p.CompanyName != companyName);
         }
 
         public async Task<bool> SeedDataAsync(int rowCount)
         {
-
-            foreach (Customer row in _mockData.GetCustomers(rowCount))
-            {
-                await this.AddAsync(row);
-            }
+            await this.BulkInsertAsync(_mockData.GetCustomers(rowCount));
             return true;
         }
 
@@ -64,7 +60,7 @@ namespace Warehouse.Infrastructure.Persistence.Repositories
             int recordsTotal, recordsFiltered;
 
             // Setup IQueryable
-            var result = _customers
+            var result = _repository
                 .AsNoTracking()
                 .AsExpandable();
 
