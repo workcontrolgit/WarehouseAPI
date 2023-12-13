@@ -17,11 +17,9 @@ namespace Warehouse.Infrastructure.Persistence.Repositories
 {
     public class CustomerRepositoryAsync : GenericRepositoryAsync<Customer>, ICustomerRepositoryAsync
     {
-        private readonly ApplicationDbContext _dbContext;
         private readonly DbSet<Customer> _repository;
-        private IDataShapeHelper<Customer> _dataShaper;
+        private readonly IDataShapeHelper<Customer> _dataShaper;
         private readonly IMockService _mockData;
-        private readonly ILogger<CustomerRepositoryAsync> _logger;
 
 
         public CustomerRepositoryAsync(ApplicationDbContext dbContext,
@@ -29,7 +27,6 @@ namespace Warehouse.Infrastructure.Persistence.Repositories
             IMockService mockData, 
             ILogger<CustomerRepositoryAsync> logger) : base(dbContext)
         {
-            _dbContext = dbContext;
             _repository = dbContext.Set<Customer>();
             _dataShaper = dataShaper;
             _mockData = mockData;
@@ -47,15 +44,15 @@ namespace Warehouse.Infrastructure.Persistence.Repositories
             return true;
         }
 
-        public async Task<(IEnumerable<Entity> data, RecordsCount recordsCount)> GetPagedCustomerReponseAsync(GetCustomersQuery requestParameter)
+        public async Task<(IEnumerable<Entity> data, RecordsCount recordsCount)> GetPagedCustomerReponseAsync(GetCustomersQuery requestParameters)
         {
-            var companyName = requestParameter.CompanyName;
-            var contactName = requestParameter.ContactName;
+            var companyName = requestParameters.CompanyName;
+            var contactName = requestParameters.ContactName;
 
-            var pageNumber = requestParameter.PageNumber;
-            var pageSize = requestParameter.PageSize;
-            var orderBy = requestParameter.OrderBy;
-            var fields = requestParameter.Fields;
+            var pageNumber = requestParameters.PageNumber;
+            var pageSize = requestParameters.PageSize;
+            var orderBy = requestParameters.OrderBy;
+            var fields = requestParameters.Fields;
 
             int recordsTotal, recordsFiltered;
 
