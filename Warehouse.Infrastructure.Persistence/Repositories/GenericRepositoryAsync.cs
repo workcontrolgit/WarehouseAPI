@@ -74,15 +74,19 @@ namespace Warehouse.Infrastructure.Persistence.Repository
 
         public async Task BulkInsertAsync(IEnumerable<T> entities)
         {
-            // Bulk Insert Extension https://entityframework-extensions.net/bulk-insert
-            await _dbContext.BulkInsertAsync(entities);
-
-            // if DB does not support bulk insert use the code below
+            // Method 1: Add
             //foreach (T row in entities)
             //{
             //    await this.AddAsync(row);
             //}
 
+
+            // Method 2:  AddRange
+            //_dbContext.AddRange(entities);
+            //_dbContext.SaveChanges();
+
+            // Method 3:   Bulk Insert Extension https://entityframework-extensions.net/bulk-insert
+            await _dbContext.BulkInsertAsync(entities);
 
         }
     }
