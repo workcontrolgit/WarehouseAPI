@@ -12,6 +12,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Dynamic.Core;
 using System.Threading.Tasks;
+using Warehouse.Infrastructure.Shared.Services;
+using System;
 
 namespace Warehouse.Infrastructure.Persistence.Repositories
 {
@@ -40,7 +42,17 @@ namespace Warehouse.Infrastructure.Persistence.Repositories
 
         public async Task<bool> SeedDataAsync(int rowCount)
         {
-            await this.BulkInsertAsync(_mockData.GetCustomers(rowCount));
+            // Create an instance of the Random class
+            Random rnd = new Random();
+
+            // Generate a random integer between 0 and 99
+            int randomNumber = rnd.Next(1000000);
+            // Generate seed data with Bogus
+            var databaseSeeder = new DatabaseSeeder(rowCount, randomNumber);
+
+
+            //await this.BulkInsertAsync(_mockData.GetCustomers(rowCount));
+            await this.BulkInsertAsync(databaseSeeder.Customers);
             return true;
         }
 
@@ -82,9 +94,8 @@ namespace Warehouse.Infrastructure.Persistence.Repositories
             {
                 result = result.OrderBy(orderBy);
             }
-            //Including multiple levels
+            // projection
             result = result.Include(customer => customer.Orders).ThenInclude(order => order.OrderItems).ThenInclude(product => product.Product);
-
 
             // select columns
             if (!string.IsNullOrWhiteSpace(fields))
