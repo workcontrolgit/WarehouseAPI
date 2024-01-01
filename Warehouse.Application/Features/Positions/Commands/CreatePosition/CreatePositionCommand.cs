@@ -5,7 +5,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using Warehouse.Application.Interfaces.Repositories;
 using Warehouse.Application.Wrappers;
-using Warehouse.Domain.Entities;
+using Warehouse.Domain.Positions.Models;
 
 namespace Warehouse.Application.Features.Positions.Commands.CreatePosition
 {

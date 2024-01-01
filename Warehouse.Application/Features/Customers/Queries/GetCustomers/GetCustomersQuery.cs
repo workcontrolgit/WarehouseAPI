@@ -8,6 +8,7 @@ using Warehouse.Domain.Entities;
 using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
+using Warehouse.Domain.Customers.Models;
 
 namespace Warehouse.Application.Features.Customers.Queries.GetCustomers
 {
@@ -20,13 +21,11 @@ namespace Warehouse.Application.Features.Customers.Queries.GetCustomers
     public class GetAllCustomersQueryHandler : IRequestHandler<GetCustomersQuery, PagedResponse<IEnumerable<Entity>>>
     {
         private readonly ICustomerRepositoryAsync _positionRepository;
-        private readonly IMapper _mapper;
         private readonly IModelHelper _modelHelper;
 
-        public GetAllCustomersQueryHandler(ICustomerRepositoryAsync positionRepository, IMapper mapper, IModelHelper modelHelper)
+        public GetAllCustomersQueryHandler(ICustomerRepositoryAsync positionRepository, IModelHelper modelHelper)
         {
             _positionRepository = positionRepository;
-            _mapper = mapper;
             _modelHelper = modelHelper;
         }
 

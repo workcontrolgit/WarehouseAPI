@@ -2,8 +2,8 @@
 {
     public interface IModelHelper
     {
-        string GetModelFields<T>();
+        string GetModelFields<Entity>();
 
-        string ValidateModelFields<T>(string fields);
+        string ValidateModelFields<Entity>(string fields);
     }
 }

@@ -1,7 +1,7 @@
 ﻿using AutoBogus;
 using Bogus;
 using System;
-using Warehouse.Domain.Entities;
+using Warehouse.Domain.Employees.Models;
 using Warehouse.Domain.Enums;
 
 namespace Warehouse.Infrastructure.Shared.Mock

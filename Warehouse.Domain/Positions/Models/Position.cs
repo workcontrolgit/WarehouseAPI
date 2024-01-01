@@ -1,8 +1,6 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using Warehouse.Domain.Common;
+﻿using Warehouse.Domain.Abstractions.Entities;
 
-namespace Warehouse.Domain.Entities
+namespace Warehouse.Domain.Positions.Models
 {
     public class Position : AuditableBaseEntity
     {

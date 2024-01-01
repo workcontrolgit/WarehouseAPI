@@ -2,10 +2,10 @@
 using Warehouse.Application.Exceptions;
 using Warehouse.Application.Interfaces.Repositories;
 using Warehouse.Application.Wrappers;
-using Warehouse.Domain.Entities;
 using System;
 using System.Threading;
 using System.Threading.Tasks;
+using Warehouse.Domain.Customers.Models;
 
 namespace Warehouse.Application.Features.Customers.Queries.GetCustomerById
 {

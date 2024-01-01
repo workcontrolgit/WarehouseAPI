@@ -1,10 +1,15 @@
 ﻿using Bogus;
-using Warehouse.Domain.Entities;
 using Warehouse.Domain.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Address = Warehouse.Domain.Entities.Address;
+using Address = Warehouse.Domain.Addresses.Models.Address;
+using Warehouse.Domain.ProductProductCategory.Entities;
+using Warehouse.Domain.Orders.Models;
+using Warehouse.Domain.ProductCategories.Models;
+using Warehouse.Domain.Customers.Models;
+using Warehouse.Domain.OrderItems.Models;
+using Warehouse.Domain.Products.Models;
 
 namespace Warehouse.Infrastructure.Shared.Services
 {

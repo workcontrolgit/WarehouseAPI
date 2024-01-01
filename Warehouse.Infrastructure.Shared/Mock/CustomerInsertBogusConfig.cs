@@ -1,6 +1,6 @@
 ﻿using Bogus;
-using Warehouse.Domain.Entities;
 using System;
+using Warehouse.Domain.Customers.Models;
 
 
 namespace Warehouse.Infrastructure.Shared.Mock

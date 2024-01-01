@@ -1,7 +1,9 @@
-﻿using Warehouse.Domain.Common;
-using System;
+﻿using System;
+using Warehouse.Domain.Abstractions.Entities;
+using Warehouse.Domain.ProductCategories.Models;
+using Warehouse.Domain.Products.Models;
 
-namespace Warehouse.Domain.Entities;
+namespace Warehouse.Domain.ProductProductCategory.Entities;
 
 public class ProductProductCategory : AuditableBaseEntity
 {

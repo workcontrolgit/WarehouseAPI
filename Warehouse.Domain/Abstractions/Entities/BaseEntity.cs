@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Warehouse.Domain.Common
+namespace Warehouse.Domain.Abstractions.Entities
 {
     public abstract class BaseEntity
     {

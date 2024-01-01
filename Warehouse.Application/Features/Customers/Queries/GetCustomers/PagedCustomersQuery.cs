@@ -8,6 +8,7 @@ using Warehouse.Domain.Entities;
 using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
+using Warehouse.Domain.Customers.Models;
 
 namespace Warehouse.Application.Features.Customers.Queries.GetCustomers
 {

@@ -9,17 +9,17 @@ namespace Warehouse.Application.Helpers
         /// <summary>
         /// Check field name in the model class
         /// </summary>
-        /// <typeparam name="T"></typeparam>
+        /// <typeparam name="Entity"></typeparam>
         /// <param name="fieldName"></param>
         /// <returns></returns>
-        public string ValidateModelFields<T>(string fields)
+        public string ValidateModelFields<Entity>(string fields)
         {
             string retString = string.Empty;
 
             var bindingFlags = System.Reflection.BindingFlags.Instance |
                                 System.Reflection.BindingFlags.NonPublic |
                                 System.Reflection.BindingFlags.Public;
-            var listFields = typeof(T).GetProperties(bindingFlags).Select(f => f.Name).ToList();
+            var listFields = typeof(Entity).GetProperties(bindingFlags).Select(f => f.Name).ToList();
             string[] arrayFields = fields.Split(',');
             foreach (var field in arrayFields)
             {
@@ -32,16 +32,16 @@ namespace Warehouse.Application.Helpers
         /// <summary>
         /// Get list of field names in the model class
         /// </summary>
-        /// <typeparam name="T"></typeparam>
+        /// <typeparam name="Entity"></typeparam>
         /// <returns></returns>
-        public string GetModelFields<T>()
+        public string GetModelFields<Entity>()
         {
             string retString = string.Empty;
 
             var bindingFlags = System.Reflection.BindingFlags.Instance |
                                 System.Reflection.BindingFlags.NonPublic |
                                 System.Reflection.BindingFlags.Public;
-            var listFields = typeof(T).GetProperties(bindingFlags).Select(f => f.Name).ToList();
+            var listFields = typeof(Entity).GetProperties(bindingFlags).Select(f => f.Name).ToList();
 
             foreach (string field in listFields)
             {

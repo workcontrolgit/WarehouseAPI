@@ -1,6 +1,8 @@
 ﻿using System.Collections.Generic;
 using Warehouse.Application.Interfaces;
-using Warehouse.Domain.Entities;
+using Warehouse.Domain.Customers.Models;
+using Warehouse.Domain.Employees.Models;
+using Warehouse.Domain.Positions.Models;
 using Warehouse.Infrastructure.Shared.Mock;
 
 namespace Warehouse.Infrastructure.Shared.Services

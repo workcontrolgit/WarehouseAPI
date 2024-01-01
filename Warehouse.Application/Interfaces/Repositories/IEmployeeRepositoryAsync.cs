@@ -2,6 +2,7 @@
 using System.Threading.Tasks;
 using Warehouse.Application.Features.Employees.Queries.GetEmployees;
 using Warehouse.Application.Parameters;
+using Warehouse.Domain.Employees.Models;
 using Warehouse.Domain.Entities;
 
 namespace Warehouse.Application.Interfaces.Repositories

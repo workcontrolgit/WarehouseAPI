@@ -1,8 +1,10 @@
-﻿using Warehouse.Domain.Common;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using Warehouse.Domain.Orders.Models;
+using Warehouse.Domain.Abstractions.Entities;
+using Warehouse.Domain.Addresses.Models;
 
-namespace Warehouse.Domain.Entities
+namespace Warehouse.Domain.Customers.Models
 {
     public class Customer : AuditableBaseEntity
     {
@@ -10,7 +12,7 @@ namespace Warehouse.Domain.Entities
         public string Phone { get; set; }
         public string ContactName { get; set; }
         public Guid AddressId { get; set; }
-        public Address? Address { get; set; }
+        public Address Address { get; set; }
         public IList<Order> Orders { get; set; } = new List<Order>();
     }
 }

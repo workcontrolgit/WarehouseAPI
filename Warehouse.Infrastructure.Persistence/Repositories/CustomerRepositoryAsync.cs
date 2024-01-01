@@ -14,6 +14,7 @@ using System.Linq.Dynamic.Core;
 using System.Threading.Tasks;
 using Warehouse.Infrastructure.Shared.Services;
 using System;
+using Warehouse.Domain.Customers.Models;
 
 namespace Warehouse.Infrastructure.Persistence.Repositories
 {

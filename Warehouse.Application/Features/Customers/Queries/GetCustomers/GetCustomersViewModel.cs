@@ -1,4 +1,4 @@
-﻿using Warehouse.Domain.Entities;
+﻿using Warehouse.Domain.Customers.Models;
 
 namespace Warehouse.Application.Features.Customers.Queries.GetCustomers
 {

@@ -1,9 +1,10 @@
-﻿using Warehouse.Domain.Common;
-using Warehouse.Domain.Enums;
+﻿using Warehouse.Domain.Enums;
 using System;
 using System.Collections.Generic;
+using Warehouse.Domain.Abstractions.Entities;
+using Warehouse.Domain.OrderItems.Models;
 
-namespace Warehouse.Domain.Entities
+namespace Warehouse.Domain.Orders.Models
 {
     public class Order : AuditableBaseEntity
     {

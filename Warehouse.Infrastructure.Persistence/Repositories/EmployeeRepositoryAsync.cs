@@ -7,6 +7,7 @@ using Warehouse.Application.Features.Employees.Queries.GetEmployees;
 using Warehouse.Application.Interfaces;
 using Warehouse.Application.Interfaces.Repositories;
 using Warehouse.Application.Parameters;
+using Warehouse.Domain.Employees.Models;
 using Warehouse.Domain.Entities;
 using Warehouse.Infrastructure.Persistence.Contexts;
 using Warehouse.Infrastructure.Persistence.Repository;

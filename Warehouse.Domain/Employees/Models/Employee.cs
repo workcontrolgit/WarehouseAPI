@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using Warehouse.Domain.Enums;
 
-namespace Warehouse.Domain.Entities
+namespace Warehouse.Domain.Employees.Models
 {
     public class Employee
     {

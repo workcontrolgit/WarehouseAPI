@@ -5,7 +5,9 @@ using System.Reflection;
 using Warehouse.Application.Behaviours;
 using Warehouse.Application.Helpers;
 using Warehouse.Application.Interfaces;
-using Warehouse.Domain.Entities;
+using Warehouse.Domain.Customers.Models;
+using Warehouse.Domain.Employees.Models;
+using Warehouse.Domain.Positions.Models;
 
 namespace Warehouse.Application
 {

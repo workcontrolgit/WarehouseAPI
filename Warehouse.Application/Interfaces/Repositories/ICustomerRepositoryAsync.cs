@@ -3,6 +3,7 @@ using Warehouse.Application.Parameters;
 using Warehouse.Domain.Entities;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Warehouse.Domain.Customers.Models;
 
 namespace Warehouse.Application.Interfaces.Repositories
 {

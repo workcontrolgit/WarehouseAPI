@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using Warehouse.Application.Features.Positions.Queries.GetPositions;
 using Warehouse.Application.Parameters;
 using Warehouse.Domain.Entities;
+using Warehouse.Domain.Positions.Models;
 
 namespace Warehouse.Application.Interfaces.Repositories
 {

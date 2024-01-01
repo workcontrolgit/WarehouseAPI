@@ -9,6 +9,7 @@ using Warehouse.Application.Interfaces;
 using Warehouse.Application.Interfaces.Repositories;
 using Warehouse.Application.Parameters;
 using Warehouse.Domain.Entities;
+using Warehouse.Domain.Positions.Models;
 using Warehouse.Infrastructure.Persistence.Contexts;
 using Warehouse.Infrastructure.Persistence.Repository;
 

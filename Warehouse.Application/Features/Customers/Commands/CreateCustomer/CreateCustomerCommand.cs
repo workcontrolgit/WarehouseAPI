@@ -2,9 +2,9 @@
 using MediatR;
 using Warehouse.Application.Interfaces.Repositories;
 using Warehouse.Application.Wrappers;
-using Warehouse.Domain.Entities;
 using System.Threading;
 using System.Threading.Tasks;
+using Warehouse.Domain.Customers.Models;
 
 namespace Warehouse.Application.Features.Customers.Commands.CreateCustomer
 {

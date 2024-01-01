@@ -1,5 +1,7 @@
 ﻿using System.Collections.Generic;
-using Warehouse.Domain.Entities;
+using Warehouse.Domain.Customers.Models;
+using Warehouse.Domain.Employees.Models;
+using Warehouse.Domain.Positions.Models;
 
 namespace Warehouse.Application.Interfaces
 {
